@@ -1,0 +1,49 @@
+<%- include('navbar.ejs') %>
+    <div class="container-fluid" style="margin-top: -10%;">
+        <div class="card shadow-lg">
+            <div class="card-header bg-dark text-light">
+                Blog Posts
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <% if ( typeof newData !=='undefined' ) { %>
+
+                        <% newData.forEach(item=> { %>
+                            <div class="col-md-4 mt-3 mb-3">
+
+
+                                <div class="card card-profile position-sticky shadow-lg">
+                                    <img src="<%=item._doc.ImagePath.substring(7); %>" height="280"
+                                        alt="Image placeholder" class="card-img-top">
+                                    <div class="card-body pt-0">
+                                        <div class="row my-4">
+                                            <div class="col">
+                                                <div class="d-flex justify-content-center">
+                                                    <div class="d-grid text-center">
+                                                        <span
+                                                            class="text-lg font-weight-bolder text-decoration-underline">
+                                                            <%=item._doc.title; %>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="text-center mt-4">
+                                            <div style="height: 150px;">
+                                                <i class="ni education_hat mr-2"></i>
+                                                <%=item._doc.Desscription; %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <% }) %>
+
+                                <% } %>
+                </div>
+            </div>
+        </div>'
+
+
+    </div>
